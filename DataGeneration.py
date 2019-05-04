@@ -206,4 +206,22 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print(
+        "".join(["Town must have :\n",
+                 "\t- {} inhabitants,\n",
+                 "\t- {} food shop,\n",
+                 "\t- {} police station,\n",
+                 "\t- {} fire station,\n",
+                 "\t- {} school,\n",
+                 "\t- {} medical office,\n",
+                 "\t- {} drug store,\n"]).format(
+            DBReader.get_inhabitant_number(),
+            DBReader.get_buildings_number_by_type("FoodShop"),
+            DBReader.get_buildings_number_by_type("PoliceStation"),
+            DBReader.get_buildings_number_by_type("FireStation"),
+            DBReader.get_buildings_number_by_type("School"),
+            DBReader.get_buildings_number_by_type("MedicalOffice"),
+            DBReader.get_buildings_number_by_type("DrugStore"),
+        )
+        )
 
