@@ -1,3 +1,4 @@
+"""
 inhabitants = [
     {
         "NationalID":   0,
@@ -33,9 +34,14 @@ buildings = [
         "City":         "",
     }
 ]
+"""
+inhabitants = []
+
+buildings = []
 
 
 city_information = {
-    "Size":             0,      # size in km2
-    "MinSizePerInhabitant": 0,  # size in m2
+    "CityName": "Paris",
+    "Size":             20,      # size in km2
+    "MinSizePerInhabitant": 100,  # size in m2
 }

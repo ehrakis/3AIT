@@ -1,4 +1,5 @@
 import DB
+import utils
 
 
 def get_inhabitant_number():
@@ -58,10 +59,35 @@ def get_buildings_by_type(building_type):
     return [building for building in DB.buildings if building["Type"] == building_type]
 
 
+def get_buildings_number_by_type(building_type):
+    return len(get_buildings_by_type(building_type))
+
+
 def get_inhabitants_by_activity(activity):
     return [inhabitant for inhabitant in DB.inhabitants if inhabitant["Activity"] == activity]
+
+
+def get_inhabitants_number_by_activity(activity):
+    return len(get_inhabitants_by_activity(activity))
 
 
 def present_all_inhabitants():
     for inhabitant in DB.inhabitants:
         print(get_inhabitant_presentation(inhabitant))
+
+
+def get_possible_id():
+    return len(DB.inhabitants) + 1
+
+
+def get_possible_building_id():
+    return len(DB.buildings) + 1
+
+
+def get_total_building_size():
+    return sum([building["Size"] for building in DB.buildings])
+
+
+def get_percentage_covered():
+    surface_filled = get_total_building_size()
+    return (surface_filled / utils.convert_km2_to_m2(DB.city_information["Size"]))*100
