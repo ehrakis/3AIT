@@ -41,7 +41,7 @@ buildings = []
 
 
 city_information = {
-    "CityName": "Paris",
-    "Size":             20,      # size in km2
-    "MinSizePerInhabitant": 10000,  # size in m2
+    "CityName":             "Paris",
+    "Size":                 20,      # size in km2
+    "MinSizePerInhabitant": 500,  # size in m2
 }
